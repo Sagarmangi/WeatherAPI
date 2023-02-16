@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const https = require("https");
-const ejs = require('ejs');
-app.set("view engine", "ejs");
 const alert = require('alert');
 
 
@@ -28,9 +26,7 @@ app.post("/", function(req, res) {
         const temp = weatherData.main.temp;
         const weatherDescription = weatherData.weather[0].description;
         const icon = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png";
-        res.write("<h1>Temperature in "+ query +" is " + temp + " degree celcius.</h1>");
-        res.write("<p>The Weather is Currently " + weatherDescription + "</p>");
-        res.write("<img src=" + icon + ">");
+        res.write("<div><h1>Temperature in "+ query +" is " + temp + " degree celcius.</h1> <p>The Weather is Currently " + weatherDescription + "</p> <img src=" + icon + "></div>");
         res.send();
       } else {
         res.redirect("/");
