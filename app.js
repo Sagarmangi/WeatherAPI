@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const https = require("https");
+const ejs = require('ejs');
+app.set("view engine", "ejs");
 const alert = require('alert');
 
 
