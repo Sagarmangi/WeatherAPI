@@ -26,8 +26,10 @@ app.post("/", function(req, res) {
         const temp = weatherData.main.temp;
         const weatherDescription = weatherData.weather[0].description;
         const icon = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png";
-        res.write("<div><h1>Temperature in "+ query +" is " + temp + " degree celcius.</h1> <p>The Weather is Currently " + weatherDescription + "</p> <img src=" + icon + "></div>");
-        res.send();
+        res.write("<h1>Temperature in "+ query +" is " + temp + " degree celcius.</h1>");
+        res.write("<p>The Weather is Currently " + weatherDescription + "</p>");
+        res.write("<img src=" + icon + ">");
+        res.sendFile(__dirname + "/result.html");
       } else {
         res.redirect("/");
         alert("Invalid City Name")
