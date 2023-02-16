@@ -29,7 +29,7 @@ app.post("/", function(req, res) {
         res.write("<h1>Temperature in "+ query +" is " + temp + " degree celcius.</h1>");
         res.write("<p>The Weather is Currently " + weatherDescription + "</p>");
         res.write("<img src=" + icon + ">");
-        res.sendFile(__dirname + "/result.html");
+        res.send();
       } else {
         res.redirect("/");
         alert("Invalid City Name")
