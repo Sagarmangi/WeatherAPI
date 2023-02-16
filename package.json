@@ -1,0 +1,18 @@
+{
+  "name": "weatherproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sagar Mangi",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^5.1.4",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "popups": "^1.1.3"
+  }
+}
